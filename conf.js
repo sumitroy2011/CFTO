@@ -1,11 +1,22 @@
 
 exports.config = {
   directConnect: true,
+  framework: 'jasmine2',
   specs: ['specs/*.js'],
-  baseUrl: 'https://christmasfood.marksandspencer.com/collection' ,
-  // beforeLaunch: function()  {
-  //         console.log('beforeLaunch');
-  //         // browser.driver.get('www.google.com');
-  //     }
-
+  //baseUrl: 'https://christmasfood.sit2.marksandspencer.com/' ,
+params: {
+    baseUrl: ''
+},
+onPrepare: function(){
+    switch(browser.params.baseUrl){
+      case 'cftouk':
+        browser.get("https://christmasfood.sit2.marksandspencer.com/");
+        break;
+      case 'cftoie':
+        browser.get("https://christmasfood.sit2.marksandspencer.ie/");
+        break;
+      default:
+        browser.get("https://christmasfood.sit2.marksandspencer.com/");
+ }
+}
 };
