@@ -1,11 +1,17 @@
+var util=require('./support/util.js');
 
 exports.config = {
   directConnect: true,
   specs: ['specs/*.js'],
-  baseUrl: 'https://christmasfood.marksandspencer.com/' ,
-  // beforeLaunch: function()  {
-  //         console.log('beforeLaunch');
-  //         // browser.driver.get('www.google.com');
-  //     }
+  framework: 'jasmine2',
+  params: {
+    baseUrl: "",
+    url: ""
+  },
+
+
+  onPrepare: function(){
+    util.onPrepare();
+},
 
 };
