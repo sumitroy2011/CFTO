@@ -11,10 +11,10 @@ module.exports={
       //get required url
 
       switch(browser.params.baseUrl){
-        case 'UK':
+        case 'cftouk':
            browser.params.url = "https://christmasfood.marksandspencer.com/";
           break;
-        case 'IE':
+        case 'cftoie':
            browser.params.url = "https://christmasfood.marksandspencer.ie/";
           break;
         default:
